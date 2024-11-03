@@ -1,0 +1,2 @@
+该文件夹中的springboot-init-master为yuapi接口开放平台的后端代码、yuapi-interface是该项目的模拟接口，
+实际的java万用项目模板在压缩包中
