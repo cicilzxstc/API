@@ -1,0 +1,24 @@
+spring:
+  application:
+    name: yupi-gateway
+  cloud:
+    gateway:
+      default-filters:
+        - AddResponseHeader=source,yupi
+      routes:
+        - id: api_route
+          uri: http://8.134.253.154:8124
+          predicates:
+            - Path=/api/**
+server:
+  # 注意！我这里写成和本地配置一样了，因为前面的client-sdk（部署到服务器的jar包）的请求我写成了8090，我懒得改了
+  port: 8090
+dubbo:
+  application:
+    name: dubbo-springboot-demo-provider
+  protocol:
+    name: dubbo
+    port: 20880
+  registry:
+    id: nacos-registry
+    address: nacos://127.17.0.2:8848
